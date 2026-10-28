@@ -6,13 +6,13 @@ Esta pasta é separada do produto. Aqui fica o que é seu: página de vendas, li
 
 O sistema é o mesmo nos três planos e o cliente fica com ele para sempre. O que muda é o tempo de suporte e atualizações:
 
-| Plano | Suporte e atualizações | Preço sugerido na página |
+| Plano | Suporte e atualizações | Preço na página |
 |---|---|---|
-| Essencial | 1 mês | R$ 997 |
-| Anual | 1 ano | R$ 1.497 |
-| Cinco anos | 5 anos | R$ 2.497 |
+| Essencial | 1 mês | R$ 175 |
+| Anual | 1 ano | R$ 547 |
+| Cinco anos | 5 anos | R$ 1.874 |
 
-Os preços são sugestões; troque à vontade. Na página, o plano Anual já aparece selecionado.
+Na página, o plano Anual aparece em destaque na tabela do computador e já selecionado no celular. A linha "custo de cada mês de suporte" é calculada sozinha a partir do preço.
 
 **Order bump:** se o checkout (Mercado Pago, Hotmart, Kiwify) permitir, venda o Essencial como produto principal e ofereça a troca para o Anual ou o Cinco anos como order bump, pagando a diferença. Na página, cada plano já tem o seu botão.
 
@@ -57,11 +57,13 @@ Gera `prumo-crm/dist/prumo-crm-vX.Y.Z.zip` sem histórico do git, sem testes e s
 
 `index.html` desta pasta. Antes de divulgar, preencha no fim do arquivo, em `PLANOS`:
 
-- `preco` de cada plano;
+- `preco` de cada plano, como número (por exemplo `547`, sem "R$" nem ponto);
 - `link` de pagamento de cada plano (Mercado Pago: Seu negócio > Link de pagamento; ou o checkout da Hotmart/Kiwify). Sem link, o botão avisa que o pagamento não foi configurado;
-- `parcelas` (opcional): por exemplo "ou 12x no cartão", só se o seu checkout oferecer;
+- `PARCELAS` (opcional, logo abaixo de `PLANOS`): por exemplo "ou em até 12x no cartão", só se o seu checkout oferecer;
 - `LINK_DEMO`: a demonstração já aponta para o seu GitHub Pages. `&entrar=1` entra direto e `&nome=` e `&cor=` abrem com a marca do visitante (a página usa isso no bloco "Com a cara da sua empresa" e na frase do final);
 - `PRECO_BARRA`: o valor usado na última barra da conta da mensalidade.
+
+A página não fala da estrutura por trás do sistema (planilha, Apps Script, GitHub, serviço de WhatsApp): isso aparece só no material de instalação, depois da compra. Na conversa de venda, siga o mesmo caminho: fale do que o sistema faz, não de como ele roda.
 
 As telas da seção "Tudo numa tela só" são capturas reais da demonstração, em `assets/telas`. Para atualizar depois de uma versão nova, rode na pasta do produto um servidor local e capture de novo (o comando está no histórico do projeto).
 

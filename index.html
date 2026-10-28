@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Prumo CRM: o CRM com WhatsApp que você paga uma vez</title>
-<meta name="description" content="CRM com WhatsApp, Instagram, robôs, e-mail marketing e cobranças, com o nome da sua empresa. Pagamento único, sem mensalidade. Os dados ficam na sua conta Google.">
-<meta property="og:title" content="Prumo CRM: pague uma vez, use para sempre">
+<title>Prumo: atendimento e vendas no WhatsApp, sem mensalidade</title>
+<meta name="description" content="Um sistema para atender no WhatsApp e no Instagram, responder sozinho, acompanhar cada venda e lembrar de cobrar, com o nome da sua empresa. Pague uma vez, sem mensalidade.">
+<meta property="og:title" content="Prumo: vendas em ordem, pagando uma vez">
 <meta property="og:description" content="WhatsApp, Instagram, robôs, funil, e-mail e cobranças num sistema com a sua marca. Sem mensalidade.">
 <meta property="og:image" content="assets/telas/fluxo.png">
 <link rel="preconnect" href="https://api.fontshare.com">
@@ -13,7 +13,7 @@
 <link href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><!-- taste-skill-ignore: fonte só das telas do produto (data-ui) -->
 <script>document.documentElement.classList.add('js')</script>
 <style>
 :root {
@@ -75,9 +75,9 @@ section { position: relative; }
 
 /* ---------------- hero ---------------- */
 .hero { min-height: 100svh; padding-top: 150px; overflow: clip; }
-.hero h1 { grid-column: 1 / 8; font-size: var(--step-display); max-width: 11ch; }
+.hero h1 { grid-column: 1 / 9; font-size: var(--step-display); }
 .hero .apoio { grid-column: 1 / 6; margin-top: 36px; font-size: 18px; max-width: 40ch; color: var(--ink); }
-.hero .acoes { grid-column: 1 / 6; margin-top: 30px; display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
+.hero .acoes { grid-column: 1 / 6; margin-top: 30px; display: flex; flex-direction: column; align-items: flex-start; gap: 18px; }
 .hero .acoes .link { font-size: 16px; }
 .palco { position: absolute; left: calc(var(--m) + (100vw - 2 * var(--m)) * 4 / 12); right: 0; top: 46%; bottom: 0; background: var(--stage);
   clip-path: polygon(0 64px, 64px 0, 100% 0, 100% 100%, 0 100%); }
@@ -116,16 +116,24 @@ section { position: relative; }
 .crm-linha.novo { background: #ecfdf5; border-color: #6ee7b7; }
 .robo-crm p { color: #4b5563; font-size: 12px; line-height: 1.4; margin-top: auto; }
 
-/* ---------------- o nome ---------------- */
+/* ---------------- o nome: o prumo que alinha ---------------- */
 .nome { padding-block: clamp(120px, 14vw, 200px); }
-.nome figure { grid-column: 1 / 6; aspect-ratio: 4 / 5; overflow: clip; background: #3b2a22; }
-.nome figure img { width: 100%; height: 100%; object-fit: cover; }
-.nome .texto { grid-column: 7 / 13; align-self: center; }
+.prumo-palco { grid-column: 1 / 7; position: relative; aspect-ratio: 5 / 6; background: var(--surface); overflow: clip; cursor: pointer; }
+.prumo-palco svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.prumo-palco .fio { stroke: #6f675f; stroke-width: 2; }
+.prumo-palco .guia { stroke: var(--accent); stroke-width: 2; stroke-dasharray: 2 8; stroke-linecap: round; }
+.fichas { position: absolute; inset: 0; }
+.ficha { position: absolute; left: 0; top: 0; display: flex; align-items: center; gap: 10px; background: var(--surface-2); padding: 10px 14px 10px 10px; font-size: 15px; white-space: nowrap; will-change: transform; }
+.ficha i { width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; font: 600 11px var(--ui-font); font-style: normal; color: #fff; flex: none; }
+.ficha b { font-weight: 500; }
+.ficha span { color: var(--muted); }
+.prumo-dica { position: absolute; left: 20px; bottom: 16px; font-size: var(--step-small); color: var(--muted); }
+.nome .texto { grid-column: 8 / 13; align-self: center; }
 .nome h2 { font-size: var(--step-head); max-width: 12ch; }
 .nome p { margin-top: 32px; font-size: var(--step-lead); line-height: 1.35; max-width: 30ch; }
-.fatos { margin-top: 48px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.fatos { margin-top: 48px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .fatos div { background: var(--surface); padding: 22px 20px; }
-.fatos b { display: block; font-size: clamp(2rem, 1.4rem + 1.6vw, 3rem); font-weight: 500; letter-spacing: -0.03em; line-height: 1; }
+.fatos b { display: block; font-size: clamp(1.8rem, 1.2rem + 1.3vw, 2.6rem); font-weight: 500; letter-spacing: -0.03em; line-height: 1; white-space: nowrap; }
 .fatos span { display: block; margin-top: 10px; font-size: 16px; color: var(--muted); }
 
 /* ---------------- vitrine (fileira iluminada) ---------------- */
@@ -197,11 +205,10 @@ section { position: relative; }
 .chamada kbd { font: 500 15px var(--font); background: var(--surface-2); padding: 6px 10px; }
 .chamada svg { width: 16px; height: 16px; color: var(--muted); }
 .resposta { margin: 20px 0 0 56px; }
-.planilha { width: 100%; background: #fff; border-radius: 8px; overflow: hidden; font-size: 13px; }
-.planilha table { width: 100%; border-collapse: collapse; }
-.planilha th, .planilha td { border: 1px solid #e2e8f0; padding: 6px 8px; text-align: left; white-space: nowrap; }
-.planilha th { background: #f8fafc; color: #475569; font-weight: 600; }
-.planilha td:first-child, .planilha th:first-child { background: #f8fafc; color: #94a3b8; width: 32px; text-align: center; }
+.passos-ui { background: #fff; border-radius: 8px; padding: 18px; display: grid; gap: 12px; font-size: 14px; }
+.passos-ui div { display: flex; align-items: center; gap: 10px; }
+.passos-ui svg { width: 18px; height: 18px; color: #16a34a; flex: none; }
+.passos-ui small { margin-left: auto; color: #4b5563; font-size: 12.5px; }
 .abas-pl { display: flex; gap: 2px; background: #f1f5f9; padding: 6px 6px 0; overflow: hidden; }
 .abas-pl span { padding: 6px 12px; font-size: 12px; color: #475569; background: #e2e8f0; border-radius: 6px 6px 0 0; white-space: nowrap; }
 .abas-pl span.on { background: #fff; color: #0f766e; font-weight: 600; }
@@ -235,27 +242,36 @@ input[type=range] { width: 100%; accent-color: var(--accent); height: 28px; curs
 .barra.nossa .p { color: var(--accent-ink); }
 .barra.mostra .v, .barra:hover .v, .barra:focus-visible .v { opacity: 1; }
 
-/* ---------------- planos (nomes, um preço vivo) ---------------- */
+/* ---------------- planos: comparação lado a lado ---------------- */
 .planos { padding-block: clamp(110px, 11vw, 160px) clamp(80px, 8vw, 120px); }
-.planos .nomes { grid-column: 1 / 7; display: flex; flex-direction: column; gap: 6px; }
-.planos .nomes button { all: unset; cursor: pointer; font-size: clamp(3rem, 1.6rem + 4.4vw, 5.5rem); font-weight: 500; letter-spacing: -0.03em; line-height: 1.1; color: var(--muted); display: flex; align-items: center; gap: 0.25em; transition: color 200ms ease; }
-.planos .nomes button::before { content: ''; width: 0.3em; height: 0.3em; border-radius: 50%; background: transparent; flex: none; transition: background-color 200ms ease; }
-.planos .nomes button[aria-selected="true"] { color: var(--ink); }
-.planos .nomes button[aria-selected="true"]::before { background: var(--accent); }
-.planos .nomes button:hover { color: var(--ink); }
-.planos .nomes button:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
-.planos .nota { margin-top: 40px; font-size: 16px; color: var(--muted); max-width: 46ch; }
-.estagio { grid-column: 8 / 13; align-self: start; position: sticky; top: 120px; }
-.estagio .preco { font-size: clamp(3.6rem, 1.5rem + 6vw, 8.2rem); font-weight: 500; letter-spacing: -0.04em; line-height: 0.9; font-variant-numeric: tabular-nums; display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
-.estagio .preco small { font-size: 18px; letter-spacing: 0; font-weight: 400; color: var(--muted); }
-.estagio .inclui { margin-top: 28px; font-size: 18px; max-width: 40ch; }
-.estagio .lista { margin-top: 22px; list-style: none; padding: 0; display: grid; gap: 10px; font-size: 17px; }
-.estagio .lista li { display: flex; gap: 10px; }
-.estagio .lista svg { width: 20px; height: 20px; color: var(--accent); flex: none; margin-top: 3px; }
-.estagio .botao { margin-top: 32px; }
-.estagio .parcelas { margin-top: 14px; font-size: var(--step-small); color: var(--muted); }
-.troca-plano { transition: opacity 200ms ease; }
-.painel-plano { display: none; }
+.planos-topo { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: var(--gap); margin-bottom: 56px; }
+.planos-topo h2 { grid-column: 1 / 8; font-size: var(--step-head); max-width: 13ch; }
+.planos-topo p { grid-column: 8 / 13; align-self: end; font-size: 18px; max-width: 40ch; }
+.comparar { width: 100%; border-collapse: separate; border-spacing: 0; table-layout: fixed; }
+.comparar th, .comparar td { padding: 18px 22px; text-align: left; vertical-align: middle; font-size: 17px; }
+.comparar thead th { vertical-align: top; padding-top: 30px; padding-bottom: 26px; }
+.comparar tbody th { font-weight: 400; color: var(--ink); width: 34%; }
+.comparar tbody tr td, .comparar tbody tr th { border-top: 1px solid #2a2520; }
+.comparar .col-anual { background: var(--surface-2); }
+.plano-nome { display: block; font-size: 22px; font-weight: 500; }
+.plano-preco { display: block; margin-top: 14px; font-size: clamp(2.6rem, 1.4rem + 2.6vw, 4.2rem); font-weight: 500; letter-spacing: -0.04em; line-height: 0.95; font-variant-numeric: tabular-nums; }
+.plano-unico { display: block; margin-top: 8px; font-size: 15px; color: var(--muted); font-weight: 400; }
+.plano-dia { display: block; margin-top: 14px; font-size: 15px; font-weight: 400; color: var(--ink); max-width: 22ch; line-height: 1.35; }
+.comparar .ok { width: 22px; height: 22px; color: var(--accent); vertical-align: -5px; }
+.comparar .compra td { border-top: 0; padding-top: 26px; padding-bottom: 30px; }
+.comparar .botao { width: 100%; justify-content: center; }
+.botao.claro { background: var(--ink); color: var(--bg); }
+@media (hover: hover) { .botao.claro:hover { background: #e7e2dc; } }
+.garantia { margin-top: 36px; display: flex; gap: 14px; align-items: flex-start; font-size: 17px; max-width: 70ch; }
+.garantia svg { width: 26px; height: 26px; color: var(--accent); flex: none; }
+.plano-mob { display: none; }
+
+/* barra de compra fixa no celular */
+.barra-compra { position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; display: none; align-items: center; gap: 12px; padding: 12px 16px calc(12px + env(safe-area-inset-bottom)); background: #171310; box-shadow: 0 -8px 24px rgba(0,0,0,.45); /* taste-skill-ignore: barra fixa flutuante */ transform: translateY(110%); transition: transform 320ms var(--ease-out); }
+.barra-compra.on { transform: none; }
+.barra-compra p { font-size: 14px; line-height: 1.25; }
+.barra-compra p b { display: block; font-size: 17px; font-weight: 500; }
+.barra-compra .botao { margin-left: auto; padding: 14px 18px; white-space: nowrap; }
 
 /* ---------------- dúvidas (índice, uma resposta) ---------------- */
 .duvidas { padding-block: clamp(96px, 9vw, 140px); background: var(--surface); }
@@ -309,16 +325,10 @@ input[type=range] { width: 100%; accent-color: var(--accent); height: 28px; curs
   .js .palco .frag { opacity: 0; transform: translateY(40px) scale(1.04); animation: chega 1000ms var(--ease-expo) 650ms forwards; }
   .js [data-reveal] { opacity: 0; transform: translateY(26px); transition: opacity 700ms var(--ease-out), transform 900ms var(--ease-expo); transition-delay: var(--d, 0ms); }
   .js [data-reveal].is-in { opacity: 1; transform: none; }
-  .js .obturador { clip-path: inset(0 0 100% 0); transition: clip-path 1100ms var(--ease-in-out); }
-  .js .obturador img { transform: scale(1.12); transition: transform 1600ms var(--ease-soft); }
-  .js .obturador.is-in { clip-path: inset(0); }
-  .js .obturador.is-in img { transform: none; }
-  .js .nome figure.is-in img { animation: deriva 14s var(--ease-soft) 1.4s infinite alternate; }
 }
 @keyframes sobe-linha { to { transform: none; } }
 @keyframes chega { to { opacity: 1; transform: none; } }
 @keyframes abre-palco { to { clip-path: polygon(0 64px, 64px 0, 100% 0, 100% 100%, 0 100%, 0 100%); } }
-@keyframes deriva { to { transform: scale(1.06) translateY(-1.5%); } }
 
 /* ---------------- telas médias e celular ---------------- */
 @media (max-width: 1100px) {
@@ -331,20 +341,24 @@ input[type=range] { width: 100%; accent-color: var(--accent); height: 28px; curs
   .nav ul li:not(:last-child) { display: none; }
   .hero { padding-top: 112px; min-height: 0; display: flex; flex-direction: column; }
   .hero .grid { display: block; }
-  .hero h1 { font-size: clamp(2.9rem, 12vw, 4.4rem); }
+  .hero h1 { font-size: clamp(2.5rem, 10.2vw, 4.4rem); }
   .hero .apoio { font-size: 16px; margin-top: 22px; }
   .palco { position: relative; left: 0; right: 0; top: auto; margin-top: 48px; height: 600px; clip-path: polygon(0 72px, 72px 0, 100% 0, 100% 100%, 0 100%); }
   .palco .frag { left: 16px; top: 72px; }
   .robo { width: 420px; }
   .robo-chat { min-height: 520px; }
   .nome .grid, .cara, .duvidas .grid, .planos .grid { display: block; }
-  .nome figure { aspect-ratio: 4 / 4.4; }
+  .prumo-palco { aspect-ratio: 4 / 4.6; }
+  .ficha { font-size: 13.5px; padding: 8px 12px 8px 8px; }
+  .ficha i { width: 22px; height: 22px; }
   .nome .texto { margin-top: 48px; }
   .fatos { grid-template-columns: 1fr; gap: 10px; }
   .vitrine { min-height: 0; padding-block: 96px; }
   .vitrine-topo, .legenda { display: block; }
   .vitrine-topo p { margin-top: 18px; }
   .painel { width: 86vw; }
+  .painel .moldura { aspect-ratio: 4 / 5; }
+  .painel img { object-position: var(--pos, 30% 0); transform: scale(1.0); }
   .fileira { padding: 0 7vw; gap: 4vw; }
   .legenda h3 { font-size: 24px; margin-bottom: 10px; }
   .navs { margin-top: 18px; }
@@ -362,17 +376,23 @@ input[type=range] { width: 100%; accent-color: var(--accent); height: 28px; curs
   .barra { height: 34px !important; width: 0; transition: width 700ms var(--ease-expo); }
   .barra .v { bottom: auto; top: 50%; transform: translateY(-50%); left: auto; right: -8px; translate: 100% 0; text-align: left; opacity: 1; font-size: 15px; }
   .barra .p { bottom: auto; top: 50%; transform: translateY(-50%); left: 10px; text-align: left; }
-  .estagio { display: none; }
-  .planos .nomes button { font-size: 12vw; }
-  .painel-plano { display: block; padding: 18px 0 72px; }
-  .painel-plano[hidden] { display: none; }
-  .painel-plano .preco { font-size: 18vw; font-weight: 500; letter-spacing: -0.04em; line-height: 0.95; }
-  .painel-plano .preco small { display: block; font-size: 16px; letter-spacing: 0; color: var(--muted); margin-top: 8px; font-weight: 400; }
-  .painel-plano p { margin-top: 22px; font-size: 17px; }
-  .painel-plano .lista { list-style: none; padding: 0; margin-top: 14px; display: grid; gap: 10px; font-size: 16px; }
-  .painel-plano .lista li { display: flex; gap: 10px; }
-  .painel-plano .lista svg { width: 18px; height: 18px; color: var(--accent); flex: none; margin-top: 3px; }
-  .painel-plano .botao { margin-top: 22px; width: 100%; justify-content: center; }
+  .planos-topo { display: block; margin-bottom: 32px; }
+  .planos-topo p { margin-top: 16px; font-size: 17px; }
+  .comparar { display: none; }
+  .plano-mob { display: block; }
+  .seg-planos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; background: var(--surface); padding: 4px; }
+  .seg-planos button { font: 500 16px var(--font); color: var(--muted); background: transparent; border: 0; padding: 14px 6px; cursor: pointer; transition: background-color 180ms ease, color 180ms ease; }
+  .seg-planos button[aria-selected="true"] { background: var(--ink); color: var(--bg); }
+  .mob-card { background: var(--surface); margin-top: 12px; padding: 26px 20px 24px; transition: opacity 200ms ease; }
+  .mob-card .plano-preco { font-size: 16vw; margin-top: 4px; }
+  .mob-card ul { list-style: none; padding: 0; margin: 22px 0 24px; display: grid; gap: 4px; }
+  .mob-card li { display: flex; justify-content: space-between; gap: 14px; padding: 12px 14px; background: var(--surface-2); font-size: 16px; }
+  .mob-card li span { flex: 1; }
+  .mob-card li b { font-weight: 500; text-align: right; white-space: nowrap; }
+  .mob-card li.muda b { color: var(--accent); }
+  .mob-card .botao { width: 100%; justify-content: center; }
+  .garantia { font-size: 16px; }
+
   .resposta-pane { display: none; }
   .resp-mob { display: block; margin: 10px 0 0 22px; font-size: 19px; line-height: 1.4; color: var(--ink); }
   .resp-mob[hidden] { display: none; }
@@ -383,6 +403,7 @@ input[type=range] { width: 100%; accent-color: var(--accent); height: 28px; curs
   .entrada { margin: 32px 0 0; max-width: none; }
   .rodape .d { justify-self: start; text-align: left; }
 }
+@media (max-width: 600px) { .barra-compra { display: flex; } body { padding-bottom: 76px; } }
 @media (max-width: 460px) { .robo { width: calc(100vw - 32px); } .bolha { font-size: 13.5px; } }
 </style>
 </head>
@@ -395,7 +416,7 @@ input[type=range] { width: 100%; accent-color: var(--accent); height: 28px; curs
   </a>
   <ul>
     <li><a href="#sistema">O sistema</a></li>
-    <li><a href="#conta">Quanto custa</a></li>
+    <li><a href="#comeca">Como começa</a></li>
     <li><a href="#planos">Planos</a></li>
     <li><a href="#duvidas">Dúvidas</a></li>
     <li><a class="link" data-demo href="#">Ver a demonstração</a></li>
@@ -406,12 +427,12 @@ input[type=range] { width: 100%; accent-color: var(--accent); height: 28px; curs
 <header class="hero" id="topo">
   <div class="wrap grid">
     <h1 class="lines">
-      <span class="line"><span data-line style="--i:0">Seu CRM,</span></span>
-      <span class="line"><span data-line style="--i:1">pago uma vez.</span></span>
+      <span class="line"><span data-line style="--i:0">Vendas em ordem,</span></span>
+      <span class="line"><span data-line style="--i:1">pagando uma vez.</span></span>
     </h1>
-    <p class="apoio" data-load style="--d:420ms">WhatsApp, Instagram, robôs, funil de vendas, e-mail marketing e cobranças num sistema com o nome da sua empresa. Os dados ficam na sua conta Google e não existe mensalidade.</p>
+    <p class="apoio" data-load style="--d:420ms">Um sistema para atender no WhatsApp e no Instagram, responder sozinho, acompanhar cada venda e lembrar de cobrar, com o nome da sua empresa. Você paga uma vez e ele é seu. Sem mensalidade.</p>
     <div class="acoes" data-load style="--d:520ms">
-      <a class="botao" href="#planos">Ver planos e preços <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="botao" href="#planos">Ver planos, a partir de R$ 175 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <a class="link" data-demo href="#">ou teste a demonstração</a>
     </div>
   </div>
@@ -432,12 +453,12 @@ input[type=range] { width: 100%; accent-color: var(--accent); height: 28px; curs
           </div>
         </div>
         <div class="robo-crm">
-          <h3>No CRM, ao mesmo tempo</h3>
-          <div class="crm-linha" id="crm-etapa"><small>Etapa do funil</small><b>Novo lead</b></div>
+          <h3>No sistema, ao mesmo tempo</h3>
+          <div class="crm-linha" id="crm-etapa"><small>Etapa da venda</small><b>Novo contato</b></div>
           <div class="crm-linha" id="crm-tag"><small>Tags</small><b>Anúncio Instagram</b></div>
           <div class="crm-linha" id="crm-resp"><small>Responsável</small><b>ninguém ainda</b></div>
           <div class="crm-linha" id="crm-tarefa"><small>Tarefa</small><b>nenhuma</b></div>
-          <p>Toque numa opção da conversa e veja o robô atender e o CRM se organizar sozinho.</p>
+          <p>Toque numa opção da conversa e veja o robô atender e o sistema se organizar sozinho.</p>
         </div>
       </div>
     </div>
@@ -448,15 +469,36 @@ input[type=range] { width: 100%; accent-color: var(--accent); height: 28px; curs
 <!-- 2. O nome: fica reto e é seu -->
 <section class="nome" id="nome" aria-labelledby="t-nome">
   <div class="wrap grid">
-    <figure class="obturador" data-shutter>
-      <img src="assets/plumb-bob-with-string.jpg" width="1241" height="2000" alt="Prumo de pedreiro pendurado por um barbante diante de uma parede de tijolos" decoding="async">
-    </figure>
+    <div class="prumo-palco" id="prumo-palco" tabindex="0" role="button" aria-label="Balançar o prumo de novo">
+      <svg viewBox="0 0 500 600" aria-hidden="true" preserveAspectRatio="xMidYMin meet">
+        <line class="guia" id="p-guia" x1="250" y1="300" x2="250" y2="300"/>
+        <g id="p-pend">
+          <line class="fio" x1="250" y1="0" x2="250" y2="190"/>
+          <g transform="translate(250 190)">
+            <rect x="-9" y="-2" width="18" height="12" fill="#a88a4c"/>
+            <polygon points="-30,12 0,12 0,40 -34,40" fill="#d9b86e"/>
+            <polygon points="0,12 30,12 34,40 0,40" fill="#b8954f"/>
+            <polygon points="-34,40 0,40 0,104" fill="#c9a45a"/>
+            <polygon points="0,40 34,40 0,104" fill="#9c7b3e"/>
+            <polygon points="-22,16 -12,16 -14,36 -26,36" fill="#ecd29a"/>
+          </g>
+        </g>
+      </svg>
+      <div class="fichas" id="fichas" data-ui>
+        <div class="ficha"><i style="background:#0f766e">AB</i><b>Ana</b><span>pediu orçamento</span></div>
+        <div class="ficha"><i style="background:#b45309">CH</i><b>Carlos</b><span>pagou a parcela</span></div>
+        <div class="ficha"><i style="background:#db2777">JR</i><b>Juliana</b><span>reunião às 15h</span></div>
+        <div class="ficha"><i style="background:#ea580c">IS</i><b>Igor</b><span>veio do anúncio</span></div>
+        <div class="ficha"><i style="background:#1f6feb">HM</i><b>Helena</b><span>lembrete enviado</span></div>
+        <div class="ficha"><i style="background:#16a34a">RL</i><b>Rafael</b><span>venda fechada</span></div>
+      </div>
+    </div>
     <div class="texto">
       <h2 id="t-nome" data-reveal>Feito para ficar reto</h2>
-      <p data-reveal style="--d:80ms">O prumo é o peso que o pedreiro pendura para a parede subir sem torto. O sistema faz isso com a sua venda: cada conversa com dono, cada lead na etapa certa, cada parcela cobrada no dia.</p>
+      <p data-reveal style="--d:80ms">Prumo é o peso que o pedreiro pendura para a parede subir sem torto. O sistema faz isso com a sua venda: cada conversa com alguém responsável, cada cliente na etapa certa, cada parcela cobrada no dia.</p>
       <div class="fatos">
         <div data-reveal style="--d:140ms"><b>R$ 0</b><span>de mensalidade, para sempre</span></div>
-        <div data-reveal style="--d:210ms"><b>Sua</b><span>conta Google guarda todos os dados</span></div>
+        <div data-reveal style="--d:210ms"><b>Seus</b><span>os dados ficam numa conta sua, não com a gente</span></div>
         <div data-reveal style="--d:280ms"><b>20 min</b><span>para instalar, com vídeos passo a passo</span></div>
       </div>
     </div>
@@ -470,16 +512,16 @@ input[type=range] { width: 100%; accent-color: var(--accent); height: 28px; curs
     <p data-reveal style="--d:80ms">Estas são telas reais do sistema. Arraste para o lado ou use as setas.</p>
   </div>
   <div class="fileira" id="fileira" tabindex="0" aria-label="Telas do sistema">
-    <figure class="painel" data-titulo="Conversas" data-texto="WhatsApp, Instagram Direct e o chat do seu site na mesma caixa de entrada, com respostas rápidas, responsável por conversa e o robô pausando sozinho quando alguém da equipe responde."><div class="moldura"><img src="assets/telas/conversa.png" width="1440" height="900" alt="Caixa de entrada de conversas do Prumo CRM com uma conversa de WhatsApp aberta" loading="lazy"></div></figure>
-    <figure class="painel" data-titulo="Automações em blocos" data-texto="Monte o robô ligando blocos, como no ManyChat: menu com botões, perguntas, tags, espera, condição, e-mail e passagem para o vendedor."><div class="moldura"><img src="assets/telas/fluxo.png" width="1440" height="900" alt="Construtor visual de automações com blocos ligados por setas" loading="lazy"></div></figure>
-    <figure class="painel" data-titulo="Financeiro" data-texto="Vendas parceladas, o que entrou no mês, o que vai entrar, quem está atrasado e reembolsos. Links do Mercado Pago dão baixa sozinhos."><div class="moldura"><img src="assets/telas/financeiro.png" width="1440" height="900" alt="Tela financeira com recebido no mês, valores a receber e inadimplentes" loading="lazy"></div></figure>
-    <figure class="painel" data-titulo="Funil de vendas" data-texto="Kanban de negócios com reuniões marcadas, o SDR que qualificou e o closer que fecha. Arraste o cartão para mudar de etapa."><div class="moldura"><img src="assets/telas/negocios.png" width="1440" height="900" alt="Funil de vendas em colunas com cartões de negócios" loading="lazy"></div></figure>
-    <figure class="painel" data-titulo="Painel" data-texto="Novos contatos, conversas esperando, vendas do mês, metas de cada pessoa e as próximas reuniões, assim que você entra."><div class="moldura"><img src="assets/telas/painel.png" width="1440" height="900" alt="Painel inicial com indicadores de contatos, vendas e reuniões" loading="lazy"></div></figure>
-    <figure class="painel" data-titulo="E-mail marketing" data-texto="Campanhas com teste A/B, aberturas e cliques, enviadas de graça pelo Gmail da sua conta. Quem pediu para sair nunca mais recebe."><div class="moldura"><img src="assets/telas/email.png" width="1440" height="900" alt="Lista de campanhas de e-mail com taxas de abertura e clique" loading="lazy"></div></figure>
+    <figure class="painel" style="--pos:40% 0" data-titulo="Conversas" data-texto="WhatsApp, Instagram e o chat do seu site numa caixa de entrada só. Respostas prontas, cada conversa com alguém responsável e o robô parando sozinho quando uma pessoa da equipe responde."><div class="moldura"><img src="assets/telas/conversa.png" width="1440" height="900" alt="Caixa de entrada de conversas do Prumo CRM com uma conversa de WhatsApp aberta" loading="lazy"></div></figure>
+    <figure class="painel" style="--pos:35% 0" data-titulo="Robôs que você monta" data-texto="Monte o atendimento automático ligando blocos: menu com botões, perguntas, espera, lembretes, e-mail e a hora de chamar o vendedor. Sem programar."><div class="moldura"><img src="assets/telas/fluxo.png" width="1440" height="900" alt="Construtor visual de automações com blocos ligados por setas" loading="lazy"></div></figure>
+    <figure class="painel" style="--pos:30% 0" data-titulo="Cobranças e pagamentos" data-texto="Vendas parceladas, o que entrou no mês, o que ainda vai entrar, quem está atrasado e reembolsos. O link de pagamento dá baixa sozinho quando o cliente paga."><div class="moldura"><img src="assets/telas/financeiro.png" width="1440" height="900" alt="Tela financeira com recebido no mês, valores a receber e inadimplentes" loading="lazy"></div></figure>
+    <figure class="painel" style="--pos:30% 0" data-titulo="Cada venda numa etapa" data-texto="Veja em que pé está cada venda, quem está cuidando e as reuniões marcadas. Arraste o cartão quando a venda avançar."><div class="moldura"><img src="assets/telas/negocios.png" width="1440" height="900" alt="Funil de vendas em colunas com cartões de negócios" loading="lazy"></div></figure>
+    <figure class="painel" style="--pos:30% 0" data-titulo="Resumo do dia" data-texto="Clientes novos, conversas esperando resposta, quanto vendeu no mês, a meta de cada pessoa e as próximas reuniões, assim que você entra."><div class="moldura"><img src="assets/telas/painel.png" width="1440" height="900" alt="Painel inicial com indicadores de contatos, vendas e reuniões" loading="lazy"></div></figure>
+    <figure class="painel" style="--pos:30% 0" data-titulo="E-mails para a sua lista" data-texto="Promoções e novidades por e-mail, sem pagar ferramenta de e-mail, com quem abriu e quem clicou. Quem pediu para sair não recebe mais."><div class="moldura"><img src="assets/telas/email.png" width="1440" height="900" alt="Lista de campanhas de e-mail com taxas de abertura e clique" loading="lazy"></div></figure>
   </div>
   <div class="legenda">
     <h3 class="legenda-troca" id="leg-t">Conversas</h3>
-    <p class="legenda-troca" id="leg-p">WhatsApp, Instagram Direct e o chat do seu site na mesma caixa de entrada.</p>
+    <p class="legenda-troca" id="leg-p">WhatsApp, Instagram e o chat do seu site numa caixa de entrada só.</p>
     <div class="navs"><button type="button" id="ant" aria-label="Tela anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg></button><button type="button" id="prox" aria-label="Próxima tela"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button></div>
   </div>
 </section>
@@ -531,41 +573,34 @@ input[type=range] { width: 100%; accent-color: var(--accent); height: 28px; curs
 </section>
 
 <!-- 5. Instalação: o que você faz e o que aparece -->
-<section class="instala wrap" id="instala" aria-labelledby="t-instala">
+<section class="instala wrap" id="comeca" aria-labelledby="t-instala">
   <div class="instala-col">
     <h2 id="t-instala" data-reveal>Pronto numa tarde</h2>
-    <p class="intro" data-reveal style="--d:80ms">Sem servidor para alugar. Você recebe vídeos mostrando cada clique.</p>
+    <p class="intro" data-reveal style="--d:80ms">Sem precisar entender de tecnologia. Você recebe vídeos mostrando cada clique.</p>
     <div class="troca">
-      <p data-reveal>Primeiro, faça uma cópia da planilha.</p>
-      <div class="chamada" data-reveal style="--d:60ms"><kbd>Arquivo</kbd><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg><kbd>Fazer uma cópia</kbd><span>na sua conta Google</span></div>
+      <p data-reveal>Primeiro, siga o vídeo de instalação.</p>
+      <div class="chamada" data-reveal style="--d:60ms"><kbd>Passo a passo em vídeo</kbd><span>cerca de 20 minutos</span></div>
       <div class="resposta" data-reveal style="--d:120ms">
-        <div class="planilha ui" data-ui>
-          <div class="abas-pl"><span class="on">Contatos</span><span>Negocios</span><span>Mensagens</span><span>Cobrancas</span><span>Automacoes</span></div>
-          <table>
-            <thead><tr><th></th><th>nome</th><th>telefone</th><th>origem</th><th>status</th></tr></thead>
-            <tbody>
-              <tr><td>2</td><td>Ana Beatriz Souza</td><td>5511984417733</td><td>Instagram</td><td>cliente</td></tr>
-              <tr><td>3</td><td>Carlos Henrique</td><td>5521996120458</td><td>Site</td><td>lead</td></tr>
-              <tr><td>4</td><td>Fernanda Alves</td><td>5531988274406</td><td>Anúncio</td><td>cliente</td></tr>
-              <tr><td>5</td><td>Gustavo Pereira</td><td>5541993301852</td><td>Indicação</td><td>lead</td></tr>
-            </tbody>
-          </table>
+        <div class="passos-ui ui" data-ui>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Sistema instalado<small>numa conta sua</small></div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Endereço próprio para a equipe entrar<small>no computador e no celular</small></div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Seu login de administrador<small>pronto</small></div>
         </div>
       </div>
     </div>
     <div class="troca">
-      <p data-reveal>Depois, publique as telas no seu GitHub.</p>
-      <div class="chamada" data-reveal style="--d:60ms"><kbd>Settings</kbd><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg><kbd>Pages</kbd><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg><kbd>main / (root)</kbd></div>
+      <p data-reveal>Depois, coloque a sua marca.</p>
+      <div class="chamada" data-reveal style="--d:60ms"><kbd>Ajustes</kbd><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg><kbd>Marca e cores</kbd><span>nome, logo e cor</span></div>
       <div class="resposta" data-reveal style="--d:120ms">
         <div class="endereco ui" data-ui>
-          <div class="barra"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>suaempresa.github.io/crm</div>
-          <p><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>Seu sistema está no ar, com o seu endereço e de graça.</p>
+          <div class="barra"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>sistema.suaempresa.com.br</div>
+          <p><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>A equipe entra e vê a sua marca, não a nossa.</p>
         </div>
       </div>
     </div>
     <div class="troca" style="margin-bottom:0">
       <p data-reveal>Por fim, conecte o WhatsApp.</p>
-      <div class="chamada" data-reveal style="--d:60ms"><kbd>Integrações</kbd><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg><kbd>Evolution API</kbd><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg><kbd>Conectar</kbd><span>e leia o QR Code</span></div>
+      <div class="chamada" data-reveal style="--d:60ms"><kbd>Integrações</kbd><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg><kbd>WhatsApp</kbd><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg><kbd>Conectar</kbd><span>e leia o QR Code</span></div>
     </div>
   </div>
   <figure class="final" data-reveal style="--d:120ms">
@@ -582,10 +617,10 @@ input[type=range] { width: 100%; accent-color: var(--accent); height: 28px; curs
       <p class="claim">é o que você paga em 5 anos de mensalidade.</p>
     </div>
     <div class="conta-ctl">
-      <label for="mensal">Quanto você paga por mês hoje em CRM, robô de WhatsApp e e-mail marketing?</label>
+      <label for="mensal">Quanto você paga por mês hoje em sistema de atendimento, robô de WhatsApp e e-mail?</label>
       <output id="mensal-v" for="mensal">R$ 297 por mês</output>
       <input type="range" id="mensal" min="57" max="1497" step="10" value="297">
-      <small>Ponha o que você paga de verdade. A última barra é o plano Anual do Prumo, pago uma vez.</small>
+      <small>Ponha o que você paga de verdade (ou o que pagaria para ter tudo isso). A última barra é o plano Anual do Prumo, pago uma vez.</small>
     </div>
   </div>
   <div class="barras ui" data-ui id="barras" role="img" aria-label="Mensalidade acumulada a cada seis meses durante cinco anos, comparada ao pagamento único do Prumo"></div>
@@ -593,14 +628,20 @@ input[type=range] { width: 100%; accent-color: var(--accent); height: 28px; curs
 
 <!-- 7. Planos: o sistema é o mesmo, muda o tempo de suporte -->
 <section class="planos wrap" id="planos" aria-labelledby="t-planos">
-  <h2 id="t-planos" class="sr">Planos</h2>
-  <div class="grid">
-    <div class="nomes-col" style="grid-column:1/7">
-      <div class="nomes" role="tablist" aria-label="Planos" id="nomes"></div>
-      <p class="nota" data-reveal>O sistema é o mesmo nos três planos e é seu para sempre. O que muda é por quanto tempo você recebe suporte, correções e atualizações. Sem suporte, ele continua funcionando como está.</p>
-    </div>
-    <div class="estagio" id="estagio" aria-live="polite"></div>
+  <div class="planos-topo">
+    <h2 id="t-planos" data-reveal>Pague uma vez. Escolha o suporte.</h2>
+    <p data-reveal style="--d:80ms">O sistema é o mesmo nos três planos e é seu para sempre. O que muda é por quanto tempo você recebe ajuda, correções e versões novas.</p>
   </div>
+  <table class="comparar" data-reveal>
+    <caption class="sr">Comparação dos planos</caption>
+    <thead id="comp-cab"></thead>
+    <tbody id="comp-corpo"></tbody>
+  </table>
+  <div class="plano-mob">
+    <div class="seg-planos" role="tablist" aria-label="Planos" id="seg-planos"></div>
+    <div class="mob-card" id="mob-card" role="tabpanel" aria-live="polite"></div>
+  </div>
+  <p class="garantia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg><span>Você tem 7 dias para testar. Se não gostar, devolvemos o valor, como garante o Código de Defesa do Consumidor. Depois desse prazo, o pagamento continua sendo único: nenhuma cobrança volta a aparecer.</span></p>
 </section>
 
 <!-- 8. Dúvidas -->
@@ -631,30 +672,30 @@ input[type=range] { width: 100%; accent-color: var(--accent); height: 28px; curs
 </section>
 </main>
 
+<div class="barra-compra" id="barra-compra" aria-hidden="true">
+  <p><b>A partir de R$ 175</b>pagamento único, sem mensalidade</p>
+  <a class="botao" href="#planos" tabindex="-1">Ver planos</a>
+</div>
+
 <footer>
   <div class="rodape">
-    <span class="e">Prumo CRM, o CRM sem mensalidade</span>
+    <span class="e">Prumo, atendimento e vendas sem mensalidade</span>
     <span class="c"><a href="#planos">Planos</a><a href="#duvidas">Dúvidas</a><a data-demo href="#">Demonstração</a></span>
     <span class="d"><span id="ano">2026</span></span>
   </div>
-  <p class="creditos">Fotos: "Plumb bob with string", de Salil Kumar Mukherjee, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via <a href="https://commons.wikimedia.org/wiki/File:Plumb_bob_with_string.jpg">Wikimedia Commons</a>. As demais imagens são telas do próprio sistema, com dados de exemplo.</p>
+  <p class="creditos">As imagens são telas do próprio sistema, com dados de exemplo.</p>
 </footer>
 
 <script>
 /* ===== Preencha antes de publicar ===== */
 var PLANOS = [
-  { id: 'essencial', nome: 'Essencial', preco: 'R$ 997', parcelas: '', link: '',
-    inclui: 'O sistema completo, seu para sempre, com 1 mês de suporte.',
-    itens: ['Planilha pronta, arquivos e vídeos de instalação', 'Ajuda e correção de erros por 1 mês', 'Atualizações lançadas nesse mês', 'Depois disso, segue funcionando como está'] },
-  { id: 'anual', nome: 'Anual', preco: 'R$ 1.497', parcelas: '', link: '',
-    inclui: 'Tudo do Essencial, com 12 meses de suporte e atualizações.',
-    itens: ['Novas funções durante 1 ano', 'Ajustes quando Meta, Google ou Mercado Pago mudarem algo', 'Ajuda por WhatsApp em horário comercial', 'Código de suporte mostrando o plano dentro do sistema'] },
-  { id: 'cinco', nome: 'Cinco anos', preco: 'R$ 2.497', parcelas: '', link: '',
-    inclui: 'Tudo do Anual por 5 anos. Para usar sempre a versão mais nova sem pensar nisso de novo.',
-    itens: ['5 anos de novas funções e correções', 'Ajustes nas integrações sempre que for preciso', 'Ajuda por WhatsApp durante os 5 anos', 'O melhor valor por ano de suporte'] }
+  { id: 'essencial', nome: 'Essencial', preco: 175, meses: 1, link: '', frase: 'Para começar já e resolver sozinho depois do primeiro mês.' },
+  { id: 'anual', nome: 'Anual', preco: 547, meses: 12, link: '', frase: 'O mais equilibrado: um ano inteiro de versões novas e ajuda.', destaque: true },
+  { id: 'cinco', nome: 'Cinco anos', preco: 1874, meses: 60, link: '', frase: 'Para nunca mais pensar em atualização.' }
 ];
+var PARCELAS = ''; // opcional, ex.: 'ou em até 12x no cartão' (só se o seu checkout oferecer)
 var LINK_DEMO = 'https://firstking1995.github.io/prumo-crm/?demo=1&entrar=1';
-var PRECO_BARRA = 1497; // valor do plano usado na última barra da conta (Anual)
+var PRECO_BARRA = 547; // valor do plano usado na última barra da conta (Anual)
 /* ====================================== */
 
 (function () {
@@ -782,44 +823,94 @@ var PRECO_BARRA = 1497; // valor do plano usado na última barra da conta (Anual
   montar();
 
   /* ---------- planos ---------- */
-  var nomes = $('#nomes'), estagio = $('#estagio'), sel = 1;
-  var ic = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>';
-  var conteudo = function (p) {
-    return '<div class="preco">' + p.preco + ' <small>pagamento único</small></div><p class="inclui">' + p.inclui + '</p><ul class="lista">' + p.itens.map(function (i) { return '<li>' + ic + '<span>' + i + '</span></li>'; }).join('') + '</ul>' +
-      '<a class="botao" href="' + (p.link || '#planos') + '"' + (p.link ? '' : ' data-sem-link') + '>Comprar o plano ' + p.nome + ' <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>' + (p.parcelas ? '<p class="parcelas">' + p.parcelas + '</p>' : '');
-  };
+  var reais = function (n) { return 'R$ ' + n.toLocaleString('pt-BR', { minimumFractionDigits: n % 1 ? 2 : 0, maximumFractionDigits: 2 }); };
+  var periodo = function (p, rot) { return p.meses === 1 ? (rot ? 'no 1º mês' : '1 mês') : p.meses === 12 ? (rot ? 'por 1 ano' : '1 ano') : (rot ? 'por 5 anos' : '5 anos'); };
+  var OK = '<svg class="ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-label="Incluído"><path d="M20 6 9 17l-5-5"/></svg>';
+  var LINHAS = [
+    ['O sistema completo, seu para sempre', function () { return OK; }],
+    ['Instalação com vídeos passo a passo', function () { return OK; }],
+    ['Ajuda e correção de erros', function (p) { return periodo(p); }, true],
+    ['Versões novas e funções novas', function (p) { return periodo(p, true); }, true],
+    ['Ajustes quando WhatsApp, Instagram ou Mercado Pago mudarem', function (p) { return periodo(p, true); }, true],
+    ['Atendimento por WhatsApp', function (p) { return periodo(p); }, true],
+    ['Custo de cada mês de suporte', function (p) { return reais(Math.round(p.preco / p.meses * 100) / 100); }, true]
+  ];
+  var comprar = function (p, cls) { return '<a class="botao ' + (cls || '') + '" href="' + (p.link || '#planos') + '"' + (p.link ? '' : ' data-sem-link') + '>Comprar ' + (p.id === 'cinco' ? '5 anos' : p.nome) + '</a>'; };
+  $('#comp-cab').innerHTML = '<tr><td></td>' + PLANOS.map(function (p) {
+    return '<th scope="col" class="' + (p.destaque ? 'col-anual' : '') + '"><span class="plano-nome">' + p.nome + '</span><span class="plano-preco">' + reais(p.preco) + '</span><span class="plano-unico">pagamento único' + (PARCELAS ? ' · ' + PARCELAS : '') + '</span><span class="plano-dia">' + p.frase + '</span></th>';
+  }).join('') + '</tr>';
+  $('#comp-corpo').innerHTML = LINHAS.map(function (l) {
+    return '<tr><th scope="row">' + l[0] + '</th>' + PLANOS.map(function (p) { return '<td class="' + (p.destaque ? 'col-anual' : '') + '">' + l[1](p) + '</td>'; }).join('') + '</tr>';
+  }).join('') + '<tr class="compra"><td></td>' + PLANOS.map(function (p) { return '<td class="' + (p.destaque ? 'col-anual' : '') + '">' + comprar(p, p.destaque ? '' : 'claro') + '</td>'; }).join('') + '</tr>';
+  var seg = $('#seg-planos'), card = $('#mob-card');
   PLANOS.forEach(function (p, i) {
     var b = document.createElement('button');
-    b.type = 'button'; b.setAttribute('role', 'tab'); b.id = 'tab-' + p.id; b.textContent = p.nome;
-    b.setAttribute('aria-controls', 'estagio');
-    nomes.appendChild(b);
-    var mob = document.createElement('div'); mob.className = 'painel-plano'; mob.id = 'mob-' + p.id; mob.innerHTML = '<div class="preco">' + p.preco + ' <small>pagamento único</small></div><a class="botao" href="' + (p.link || '#planos') + '"' + (p.link ? '' : ' data-sem-link') + '>Comprar o plano ' + p.nome + '</a><p>' + p.inclui + '</p><ul class="lista">' + p.itens.map(function (x) { return '<li>' + ic + '<span>' + x + '</span></li>'; }).join('') + '</ul>'; mob.hidden = true;
-    nomes.appendChild(mob);
-    b.addEventListener('click', function () { escolher(i); });
-    b.addEventListener('keydown', function (e) { if (e.key === 'ArrowDown' || e.key === 'ArrowRight') { e.preventDefault(); escolher((i + 1) % PLANOS.length, true); } if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') { e.preventDefault(); escolher((i + PLANOS.length - 1) % PLANOS.length, true); } });
+    b.type = 'button'; b.setAttribute('role', 'tab'); b.textContent = p.id === 'cinco' ? '5 anos' : p.nome;
+    b.onclick = function () { mostrarPlano(i); };
+    seg.appendChild(b);
   });
-  function escolher(i, foco) {
-    sel = i;
-    PLANOS.forEach(function (p, k) { var t = $('#tab-' + p.id); t.setAttribute('aria-selected', k === i); t.tabIndex = k === i ? 0 : -1; $('#mob-' + p.id).hidden = k !== i; });
-    if (foco) $('#tab-' + PLANOS[i].id).focus();
-    estagio.style.opacity = 0;
-    setTimeout(function () { estagio.innerHTML = conteudo(PLANOS[i]); estagio.style.opacity = 1; ligarSemLink(); }, reduz ? 0 : 200);
+  function mostrarPlano(i) {
+    var p = PLANOS[i];
+    $$('button', seg).forEach(function (b, k) { b.setAttribute('aria-selected', k === i); });
+    card.style.opacity = 0;
+    setTimeout(function () {
+      card.innerHTML = '<span class="plano-nome">' + p.nome + '</span><span class="plano-preco">' + reais(p.preco) + '</span><span class="plano-unico">pagamento único' + (PARCELAS ? ' · ' + PARCELAS : '') + '</span><span class="plano-dia">' + p.frase + '</span>' +
+        '<ul>' + LINHAS.map(function (l) { var v = l[1](p); return '<li class="' + (l[2] ? 'muda' : '') + '"><span>' + l[0] + '</span><b>' + (v === OK ? 'Sim' : v) + '</b></li>'; }).join('') + '</ul>' + comprar(p);
+      card.style.opacity = 1; ligarSemLink();
+    }, reduz ? 0 : 180);
   }
   function ligarSemLink() { $$('[data-sem-link]').forEach(function (a) { a.onclick = function (e) { e.preventDefault(); alert('Link de pagamento ainda não configurado.'); }; }); }
-  estagio.style.transition = 'opacity 200ms ease';
-  escolher(1);
+  mostrarPlano(1);
   ligarSemLink();
+
+  /* ---------- barra de compra no celular ---------- */
+  var bc = $('#barra-compra'), passouTopo = false, emPlanos = false;
+  var atualizaBarra = function () { bc.classList.toggle('on', passouTopo && !emPlanos); };
+  new IntersectionObserver(function (es) { passouTopo = !es[0].isIntersecting; atualizaBarra(); }).observe($('#topo'));
+  new IntersectionObserver(function (es) { emPlanos = es[0].isIntersecting; atualizaBarra(); }, { rootMargin: '0px 0px -30% 0px' }).observe($('#planos'));
+
+  /* ---------- o prumo que alinha ---------- */
+  (function () {
+    var palco = $('#prumo-palco'), pend = $('#p-pend'), guia = $('#p-guia'), fichas = $$('.ficha', palco);
+    var inicio = fichas.map(function (f, i) { return { x: [4, 46, 8, 40, 14, 44][i], y: [8, 16, 50, 60, 74, 84][i], r: [-9, 7, -5, 10, -8, 5][i] }; });
+    var t0 = null, rodando = false, A = 0.55, f0alt = fichas[0].offsetHeight || 44;
+    function quadro(agora) {
+      var t = (agora - t0) / 1000;
+      var env = Math.exp(-1.1 * t), ang = A * env * Math.cos(3.2 * t), prog = Math.min(1, Math.max(0, (t - 0.35) / 2.6));
+      var suave = 1 - Math.pow(1 - prog, 3);
+      pend.setAttribute('transform', 'rotate(' + (ang * 57.3).toFixed(2) + ' 250 0)');
+      guia.setAttribute('y2', 300 + 290 * suave);
+      var W = palco.clientWidth, H = palco.clientHeight, passo = Math.min(H * 0.074, f0alt + 10), y0 = H - 24 - passo * 6;
+      fichas.forEach(function (f, i) {
+        var a = inicio[i], fx = W / 2 - f.offsetWidth / 2, fy = y0 + i * passo;
+        var ix = W * a.x / 100, iy = H * a.y / 100;
+        var x = ix + (fx - ix) * suave, y = iy + (fy - iy) * suave, r = a.r * (1 - suave);
+        f.style.transform = 'translate(' + x.toFixed(1) + 'px,' + y.toFixed(1) + 'px) rotate(' + r.toFixed(2) + 'deg)';
+      });
+      if (t < 4.2) requestAnimationFrame(quadro); else rodando = false;
+    }
+    function balancar() { if (rodando) return; rodando = true; t0 = null; requestAnimationFrame(function (a) { t0 = a; quadro(a); }); }
+    function final() { t0 = performance.now() - 10000; quadro(performance.now()); }
+    var visto = false;
+    new IntersectionObserver(function (es) { if (es[0].isIntersecting && !visto) { visto = true; reduz ? final() : balancar(); } }, { threshold: 0.35 }).observe(palco);
+    palco.addEventListener('click', function () { if (!reduz) { A = 0.42; balancar(); } });
+    palco.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); palco.click(); } });
+    // posição inicial (antes de entrar na tela) e ao mudar o tamanho
+    t0 = performance.now(); quadro(t0); rodando = false;
+    window.addEventListener('resize', function () { if (!rodando && visto) final(); });
+  })();
 
   /* ---------- dúvidas ---------- */
   var DUVIDAS = [
-    ['Tem alguma mensalidade escondida?', 'Não para o sistema. Ele roda no Google Planilhas e no GitHub Pages, que são gratuitos. Só existe custo se você escolher: um servidor para a Evolution API (a partir de uns R$ 25 por mês) ou as mensagens da API oficial da Meta.'],
-    ['Onde ficam os dados dos meus clientes?', 'Numa planilha na sua conta Google. Ninguém além da sua equipe tem acesso. Todo mês o sistema guarda o mês anterior numa planilha separada no seu Drive, para nunca encher.'],
-    ['Quantos usuários e contatos posso ter?', 'Usuários, sem limite: cada pessoa da equipe tem o seu login, com acesso de SDR, closer, gestor ou personalizado. Contatos, até o espaço da planilha do Google, que o arquivo mensal mantém longe do limite.'],
-    ['Funciona com o meu WhatsApp?', 'Funciona pela Evolution API ou pelo WAHA (gratuitos, conectados pelo QR Code), pela API oficial da Meta ou no modo link, que abre a conversa no seu WhatsApp sem instalar nada.'],
-    ['Sou leigo. Consigo instalar?', 'Consegue. São três passos com vídeo: copiar a planilha, colar o código e publicar as telas no GitHub. Leva cerca de 20 minutos e não precisa saber programar.'],
-    ['O que acontece quando o suporte acaba?', 'O sistema continua seu e funcionando do mesmo jeito. Você só deixa de receber atualizações e correções. Como Meta, Google e Mercado Pago mudam de tempos em tempos, os planos Anual e Cinco anos mantêm tudo em dia.'],
-    ['Posso usar a minha marca?', 'Pode. Nome, logo e cores são trocados pelo próprio sistema e valem para toda a equipe, para os e-mails e para o chat do site. Seus clientes não veem a marca Prumo.'],
-    ['O que eu recebo depois da compra?', 'O link da planilha pronta, os arquivos do sistema, os vídeos de instalação e o seu código de suporte, que mostra o seu plano e até quando ele vale dentro do sistema.']
+    ['O que é esse sistema, na prática?', 'É o caderno de clientes da empresa, só que automático. Guarda cada contato, cada conversa e cada venda, responde sozinho no WhatsApp, lembra você do que fazer e de quem cobrar. No mercado isso se chama CRM.'],
+    ['Tem alguma mensalidade escondida?', 'Não. O sistema roda numa conta sua, numa estrutura gratuita, sem servidor nosso no meio. Só existe custo se você quiser: conectar o WhatsApp por um serviço de conexão (a partir de uns R$ 25 por mês) ou usar a API oficial do WhatsApp, que cobra por mensagem.'],
+    ['Onde ficam os dados dos meus clientes?', 'Numa conta sua, criada na instalação. A gente não tem acesso a nada. Todo mês o sistema guarda o mês anterior separado, para continuar rápido por anos.'],
+    ['Funciona com o meu WhatsApp?', 'Funciona com o WhatsApp da empresa conectado pelo QR Code, como no WhatsApp Web, ou com a API oficial do WhatsApp. Também atende pelo Instagram e por uma janela de conversa no seu site.'],
+    ['Não entendo de tecnologia. Consigo instalar?', 'Consegue. São três passos com vídeo, sem programar nada. Leva cerca de 20 minutos e depois a sua equipe só entra e usa.'],
+    ['Funciona no celular?', 'Funciona no computador e no celular, pelo navegador. No celular dá para colocar um ícone na tela inicial e usar como aplicativo.'],
+    ['Quantas pessoas da equipe podem usar?', 'Quantas você quiser, sem pagar a mais por pessoa. Cada uma tem o seu login, e você escolhe o que cada uma pode ver: atendimento, vendas, financeiro ou marketing.'],
+    ['O que acontece quando o suporte acaba?', 'O sistema continua seu e funcionando do mesmo jeito. Você só deixa de receber versões novas e correções. Como WhatsApp, Instagram e bancos mudam de tempos em tempos, os planos Anual e Cinco anos mantêm tudo em dia.'],
+    ['O que eu recebo depois da compra?', 'O acesso para instalar, os vídeos passo a passo e o seu código de suporte, que mostra dentro do sistema o seu plano e até quando ele vale.']
   ];
   var lq = $('#lista-q'), pane = $('#resp-pane'), dq = 0;
   DUVIDAS.forEach(function (d, i) {
