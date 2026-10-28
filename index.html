@@ -206,7 +206,7 @@
     var LINK_PAGAMENTO = '';
     var PRECO = 'R$ 997';
     // Endereço da demonstração (o sistema publicado em qualquer lugar, com ?demo=1 no fim).
-    var LINK_DEMO = '';
+    var LINK_DEMO = 'https://firstking1995.github.io/prumo-crm/?demo=1';
     document.querySelectorAll('[data-demo]').forEach(function (a) { if (LINK_DEMO) { a.href = LINK_DEMO; a.target = '_blank'; a.rel = 'noopener'; } else a.style.display = 'none'; });
     document.getElementById('valor').textContent = PRECO;
     var b = document.getElementById('comprar');
